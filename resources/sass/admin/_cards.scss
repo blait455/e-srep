@@ -1,0 +1,111 @@
+// Custom Card Styling
+
+.card {
+  .card-header {
+    // Format Dropdowns in Card Headings
+    .dropdown {
+      line-height: 1;
+      .dropdown-menu {
+        line-height: 1.5;
+      }
+    }
+  }
+  // Collapsable Card Styling
+  .card-header[data-toggle="collapse"] {
+    text-decoration: none;
+    position: relative;
+    padding: 0.75rem 3.25rem 0.75rem 1.25rem;
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-right: 1.725rem;
+      line-height: 51px;
+      font-weight: 900;
+      content: '\f107';
+      font-family: 'Font Awesome 5 Free';
+      color: $gray-400;
+    }
+    &.collapsed {
+      border-radius: $card-border-radius;
+      &::after {
+        content: '\f105';
+      }
+    }
+  }
+}
+.admin-table {
+  tbody{
+    tr {
+      td {
+        vertical-align: middle;
+        padding: 0.2rem 0.5rem;
+      }
+      .tiny-img {
+        width: 65px;
+        height: 65px;
+      }
+    }  
+  }
+}
+
+#image_preview {
+  margin-bottom: 0.5rem;
+  .image-p {
+    display: inline-block;
+    margin: 0.2rem;
+    position: relative;
+    .delete_image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 11;
+      font-weight: bold;
+      color: #f6c23e;
+      font-size: 23px;
+      cursor: pointer;
+      &:hover {
+        color: #c32929;
+      }
+    }
+  }  
+}
+
+.rating_box{
+  display: inline-flex;
+}
+.star-rating{
+  font-size: 0;
+      padding-left: 10px;
+    padding-right: 10px;
+}
+.star-rating__wrap{
+  display: inline-block;
+  font-size: 1rem;
+}
+.star-rating__wrap:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.star-rating__ico{
+  float: right;
+  padding-left: 2px;
+  cursor: pointer;
+  color: #fbd600;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.star-rating__ico:last-child{
+  padding-left: 0;
+}
+.star-rating__input{
+  display: none;
+}
+.star-rating__ico:hover:before,
+.star-rating__ico:hover ~ .star-rating__ico:before,
+.star-rating__input:checked ~ .star-rating__ico:before
+{
+  content: "\f005";
+  font-weight: 900;
+}
